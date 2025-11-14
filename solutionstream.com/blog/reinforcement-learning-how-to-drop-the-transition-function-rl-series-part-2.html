@@ -1,0 +1,385 @@
+<!--
+   _____       _       _   _              _____ _                            
+  / ____|     | |     | | (_)            / ____| |                           
+ | (___   ___ | |_   _| |_ _  ___  _ __ | (___ | |_ _ __ ___  __ _ _ __ ___  
+  \___ \ / _ \| | | | | __| |/ _ \| '_ \ \___ \| __| '__/ _ \/ _` | '_ ` _ \ 
+  ____) | (_) | | |_| | |_| | (_) | | | |____) | |_| | |  __/ (_| | | | | | |
+ |_____/ \___/|_|\__,_|\__|_|\___/|_| |_|_____/ \__|_|  \___|\__,_|_| |_| |_|
+
+  Are you a developer? Come work for us!                                                                    
+-->
+
+<!doctype html>
+<html lang="en" dir="ltr" x-data="{ show: false }">
+  
+<!-- Mirrored from solutionstream.com/blog/reinforcement-learning-how-to-drop-the-transition-function-rl-series-part-2 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Oct 2025 01:19:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="../assets/theme/app-icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../assets/theme/app-icons/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&amp;display=swap" rel="stylesheet">
+
+    <link href="../css/style.css" rel="stylesheet" media="screen">
+
+    <title>Reinforcement Learning: How to Drop the Transition Function (RL Series Part 2) | SolutionStream</title>
+<meta name="description" content="@seo:In my last post&nbsp;I situated Reinforcement Learning in the family of Artificial Intelligence vs Machine Learning group of algorithms and then described how, at least in principle,...Reward Function:&nbsp;A function that tells us the reward of a given state. For our Very Simple Maze&trade; it was essentially &ldquo;if you&rsquo;re in state 3, return 100 otherwise return...The basic idea is that it&rsquo;s a lot like our value function, where we list the utility of each state based on the best possible action from that state. Here, instead, we&rsquo;re...V represents the &quot;Value function&quot; and the PI (&pi;) symbol represents a policy, though not (yet) necessarily the optimal policy. The &gamma; is the Greek letter gamma and it is...Again, we&#039;re using the pi (&pi;) symbol to represent a policy, but we&#039;re now placing a star above it to indicate we&#039;re now talking about the optimal policy.&nbsp;So this...This next function is actually identical to the one before (though it may not be immediately obvious that is the case) except now we&#039;re defining the optimal policy in terms...Okay, now we&rsquo;re defining the Q-Function, which is just the reward for the current State &quot;s&quot; given a specific action &quot;a&quot;, i.e. r(s,a), plus the discounted (&gamma;)...Okay, we&rsquo;re now defining the optimal policy function in terms of the Q-Function! It basically just says that the optimal policy function is equivalent to the Q function where...Here, the way I wrote it, &quot;a&rsquo;&quot; means the next action you&rsquo;ll take. In other words, you&rsquo;re already looking at a value for the action &quot;a&quot; that got you to the...&ldquo;But wait!&rdquo; I hear you cry. You haven&rsquo;t accomplished anything! I mean I can still see that little transition function (&delta;) in the definition! So you&rsquo;ve bought nothing so far!...This equation really just says that you have a table containing the Q-function and you update that table with each move by taking the reward for the last State s / Action a pair..." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Reinforcement Learning: How to Drop the Transition Function (RL Series Part 2)" />
+<meta property="og:description" content="@seo:In my last post&nbsp;I situated Reinforcement Learning in the family of Artificial Intelligence vs Machine Learning group of algorithms and then described how, at least in principle,...Reward Function:&nbsp;A function that tells us the reward of a given state. For our Very Simple Maze&trade; it was essentially &ldquo;if you&rsquo;re in state 3, return 100 otherwise return...The basic idea is that it&rsquo;s a lot like our value function, where we list the utility of each state based on the best possible action from that state. Here, instead, we&rsquo;re...V represents the &quot;Value function&quot; and the PI (&pi;) symbol represents a policy, though not (yet) necessarily the optimal policy. The &gamma; is the Greek letter gamma and it is...Again, we&#039;re using the pi (&pi;) symbol to represent a policy, but we&#039;re now placing a star above it to indicate we&#039;re now talking about the optimal policy.&nbsp;So this...This next function is actually identical to the one before (though it may not be immediately obvious that is the case) except now we&#039;re defining the optimal policy in terms...Okay, now we&rsquo;re defining the Q-Function, which is just the reward for the current State &quot;s&quot; given a specific action &quot;a&quot;, i.e. r(s,a), plus the discounted (&gamma;)...Okay, we&rsquo;re now defining the optimal policy function in terms of the Q-Function! It basically just says that the optimal policy function is equivalent to the Q function where...Here, the way I wrote it, &quot;a&rsquo;&quot; means the next action you&rsquo;ll take. In other words, you&rsquo;re already looking at a value for the action &quot;a&quot; that got you to the...&ldquo;But wait!&rdquo; I hear you cry. You haven&rsquo;t accomplished anything! I mean I can still see that little transition function (&delta;) in the definition! So you&rsquo;ve bought nothing so far!...This equation really just says that you have a table containing the Q-function and you update that table with each move by taking the reward for the last State s / Action a pair..." />
+<meta property="og:url" content="reinforcement-learning-how-to-drop-the-transition-function-rl-series-part-2.html" />
+<meta property="og:site_name" content="SolutionStream" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@solutionstream" />
+<meta name="twitter:title" content="Reinforcement Learning: How to Drop the Transition Function (RL Series Part 2)" />
+<meta name="twitter:description" content="@seo:In my last post&nbsp;I situated Reinforcement Learning in the family of Artificial Intelligence vs Machine Learning group of algorithms and then described how, at least in principle,...Reward Function:&nbsp;A function that tells us the reward of a given state. For our Very Simple Maze&trade; it was essentially &ldquo;if you&rsquo;re in state 3, return 100 otherwise return...The basic idea is that it&rsquo;s a lot like our value function, where we list the utility of each state based on the best possible action from that state. Here, instead, we&rsquo;re...V represents the &quot;Value function&quot; and the PI (&pi;) symbol represents a policy, though not (yet) necessarily the optimal policy. The &gamma; is the Greek letter gamma and it is...Again, we&#039;re using the pi (&pi;) symbol to represent a policy, but we&#039;re now placing a star above it to indicate we&#039;re now talking about the optimal policy.&nbsp;So this...This next function is actually identical to the one before (though it may not be immediately obvious that is the case) except now we&#039;re defining the optimal policy in terms...Okay, now we&rsquo;re defining the Q-Function, which is just the reward for the current State &quot;s&quot; given a specific action &quot;a&quot;, i.e. r(s,a), plus the discounted (&gamma;)...Okay, we&rsquo;re now defining the optimal policy function in terms of the Q-Function! It basically just says that the optimal policy function is equivalent to the Q function where...Here, the way I wrote it, &quot;a&rsquo;&quot; means the next action you&rsquo;ll take. In other words, you&rsquo;re already looking at a value for the action &quot;a&quot; that got you to the...&ldquo;But wait!&rdquo; I hear you cry. You haven&rsquo;t accomplished anything! I mean I can still see that little transition function (&delta;) in the definition! So you&rsquo;ve bought nothing so far!...This equation really just says that you have a table containing the Q-function and you update that table with each move by taking the reward for the last State s / Action a pair..." />
+<meta property="og:image" content="../img/asset/YXNzZXRzL2Jsb2cvUkwvYmx1ZXNoaXJ0LSgxKS5qcGc%3d8b51.jpg?p=seo_pro_og&amp;s=fa6ac5d12dec2bb1b257ed8774dd6722" />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:alt" content="" />
+<meta name="twitter:image" content="../img/asset/YXNzZXRzL2Jsb2cvUkwvYmx1ZXNoaXJ0LSgxKS5qcGc%3d5c2d.jpg?p=seo_pro_twitter&amp;s=ded3267c0f380373a2f5ecc677e617c5" />
+<meta name="twitter:image:alt" content="" />
+<link href="../index.html" rel="home" />
+<link href="reinforcement-learning-how-to-drop-the-transition-function-rl-series-part-2.html" rel="canonical" />
+<link type="text/plain" rel="author" href="../humans.txt" />
+
+  </head>
+  <body :class="{ 'show-nav': show }">
+    <div class="overlay" @click="show = false"></div>
+
+    <nav class="mobile-nav">
+      <div class="close-nav text-right" @click="show = false"><i class="icon-clear"></i></div>
+      <ul class="list-unstyled">
+      <li>
+    <a href="../services.html">Services</a>
+  </li>
+          <li>
+    <a href="../solutionmap.html">SolutionMap</a>
+  </li>
+          <li>
+    <a href="../work.html">Work</a>
+  </li>
+          <li>
+    <a href="../company.html">Company</a>
+  </li>
+          <li class="active">
+    <a href="../blog.html">Blog</a>
+  </li>
+            <li>
+    <a href="../contact.html" class="button">Schedule a Call</a>
+  </li>
+    
+</ul>
+
+
+    </nav>
+
+    <header class="site-masthead ">
+      <div class="site-logo">
+        <a href="../index.html" aria-label="SolutionStream">
+          <img class="dark" src="../assets/logos/solutionstream-logo-horz.svg">
+          <img class="light" src="../assets/logos/solutionstream-logo-white-horz.svg">
+        </a>
+      </div>
+      <nav class="site-nav">
+        <ul class="list-unstyled">
+      <li>
+    <a href="../services.html">Services</a>
+  </li>
+          <li>
+    <a href="../solutionmap.html">SolutionMap</a>
+  </li>
+          <li>
+    <a href="../work.html">Work</a>
+  </li>
+          <li>
+    <a href="../company.html">Company</a>
+  </li>
+          <li class="active">
+    <a href="../blog.html">Blog</a>
+  </li>
+            <li>
+    <a href="../contact.html" class="button">Schedule a Call</a>
+  </li>
+    
+</ul>
+
+
+      </nav>
+      <div class="mobile-nav-icon" @click="show = !show"><i class="icon-menu"></i></div>
+    </header>
+
+
+          <div class="page-header-wrapper blog">
+  <div class="parallax" data-parallax-image="/img/asset/YXNzZXRzL2Jsb2cvUkwvYmx1ZXNoaXJ0LSgxKS5qcGc=?w=1200&h=500&s=4e51d921a4bc9ce71f6566e30c2b51a3"></div>
+  <div class="container page-header">
+    <div class="content">
+      <div class="inner">
+        <h1 class="hyphen">Reinforcement Learning: How to Drop the Transition Function (RL Series Part 2)</h1>
+        <p class="pl-60 mb-0">Written by Bruce Nielson          <span class="ml-12 mr-12">|</span>
+          <span class="read-time">
+          <i class="icon-access_time"></i>
+          <span class="reading-time"></span> read
+        </span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+
+    <main>
+
+      <section class="container blog-article">
+  <div class="content mw-750">
+    <article> 
+      
+                  <p><a href="what-makes-reinforcement-learning-so-exciting-rl-series-part-1.html">In my last post</a> I situated Reinforcement Learning in the family of Artificial Intelligence vs Machine Learning group of algorithms and then described how, at least in principle, every problem can be framed in terms of the <em>Markov Decision Process</em> (MDP) and even described an “all purpose” (not really) algorithm for solving all MDPs – if you have happen to know the transition function (and reward function) of the problem you’re trying to solve. </p><p><strong>But what if you don’t know the transition function?</strong></p><p>This post is going to be a bit math heavy. But don’t worry, it’s not nearly as difficult as the fancy equations first make it seem. What I’m going to demonstrate is that using the Bellman equations (named after Richard Bellman who I mentioned in the <a href="what-makes-reinforcement-learning-so-exciting-rl-series-part-1.html">previous post</a> as the inventor of Dynamic Programming) and a little mathematical ingenuity, it’s actually possible to solve (or rather approximately solve) a Markov Decision Process without knowing the Transition Function or Reward Function!</p><p><strong>The Value, Reward, and Transition Functions</strong></p><p>So let’s start with a quick review:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/review.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p><strong>Reward Function:</strong> A function that tells us the reward of a given state. For our Very Simple Maze™ it was essentially “if you’re in state 3, return 100 otherwise return 0”</p><p><strong>Transition Function:</strong> The transition function was just a table that told us “if you’re in state 2 and you move right you’ll now be in state 3.”</p><p><strong>Value Function:</strong> The value function is a function we built using Dynamic Programming that calculated a Utility for each state such that we know how close we were to the goal.</p><p><strong>Optimal Policy:</strong> A policy for each state that gets you to the highest reward as quickly as possible.</p><p>So I want to introduce one more simple idea on top of those. It’s called the Q-Function and it looks something like this:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/q-function.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>The basic idea is that it’s a lot like our value function, where we list the utility of each state based on the best possible action from that state. Here, instead, we’re listing the utility per actionfor that state. So, for example, State 2 has a utility of 100 if you move right because it gets you a reward of 100, but moving down in State 2 is a utility of only 81 because it moves you further away from the goal. So the Q-function is basically identical to the value function except it is a function of state andaction rather than just state.</p><p>It’s not hard to see that the Q-Function can be easily turned into the value function (just take the highest utility move for that state) but that the reverse isn’t true. Because of this, the Q-Function allows us to do a bit more with it and will play a critical role in how we solve MDPs without knowing the transition function.</p><p><strong>The Beautiful Mathematical Proof</strong></p><p>Okay, so let’s move on and I’ll now present the rest of the proof that it’s possible to solve MDPs without the transition function known. Consider this equation here:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/value-function.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>V represents the &quot;Value function&quot; and the PI (π) symbol represents a policy, though not (yet) necessarily the optimal policy. The γ is the Greek letter gamma and it is used to represent any time we are discounting the future.  </p><p>So this fancy equation really just says that the value function for some policy, which is a function of State at time t (St), is really just the sum of rewards of that state plus the <em>discounted</em> (γ) rewards for every state that the policy (π) will enter into after that state. (Note how we raise the exponent on the discount γ for each additional move into the future to make each move into the future further discounted.) That final value is the value or utility of the state S at time t.</p><p>So the value function returns the utility for a state given a certain policy (π) by calculating what in economics would be called the “net present value” of the future expected rewards given the policy. It’s not hard to see that the end result would be what we’ve been calling the value function (i.e. the grid with the utilities listed for each state.) So this equation just formally explains how to calculate the value of a policy.</p><p>Now this would be how we calculate the value or utility of any given policy, even a bad one. But what we&#039;re really interested in is the <em>best</em> policy (or rather the <em>optimal policy</em>) that gets us the <em>best</em> value for a given state. So let&#039;s define what we mean by &#039;optimal policy&#039;:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/optimal-policy.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>Again, we&#039;re using the pi (π) symbol to represent a policy, but we&#039;re now placing a star above it to indicate we&#039;re now talking about the optimal policy. </p><p>So this function says that the optimal policy (π*) is the policy that returns the optimal value (or max value) possible for state &quot;s&quot; out of all possible States. Again, despite the weird mathematical notation, this is actually pretty intuitive so far. This basically boils down to saying  that the optimal policy is the policy with the best utility from the state you are currently in. It’s thus identical to what we’ve been calling the optimal policy where you always know the best move for a given state.</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/optimal-policy-by-state.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>This next function is actually identical to the one before (though it may not be immediately obvious that is the case) except now we&#039;re defining the optimal policy in terms of State &quot;s&quot;. This will be handy for us later. </p><p>So this function says that the <em>optimal policy for state &quot;s&quot;</em> is the action &quot;a&quot; that returns the highest reward (i.e. argmax) for state &quot;s&quot; and action &quot;a&quot; plus the discounted (γ) utility of the new state you end up in. (Remember δ is the transition function, so this is just a fancy way of saying “the next state” after State &quot;s&quot; if you took Action &quot;a&quot;).</p><p>In plain English this is far more intuitively obvious. It just says that the optimal policy for state &quot;s&quot; is the best action that gives the highest reward plus the discounted future rewards. Of course the optimal policy is that you take the best action for each state! So this one is straightforwardly obvious as well.</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/q-function-equation.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>Okay, now we’re defining the Q-Function, which is just the reward for the current State &quot;s&quot; given a specific action &quot;a&quot;, i.e. r(s,a), plus the discounted (γ) optimal value for the next state (i.e. the transition (δ) function again, which puts you into the next state when you’re in state &quot;s&quot; and take action &quot;a&quot;.)</p><p>So this is basically identical to the optimal policy function right above it except now the function is based on the state and action pair rather than just state. It will become useful later that we can define the Q-function this way.</p><p><strong>The Clever Part</strong></p><p>Now here is where smarter people than I started getting clever:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/optimal-policy-via-q.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>Okay, we’re now defining the optimal policy function in terms of the Q-Function! It basically just says that the optimal policy function is equivalent to the Q function where you happen to always take the action that will return the highest value for a given state. </p><p>This is basically equivalent to how I already pointed out that the value function can be computed from the Q-Function. We already knew we could compute the optimal policy from the optimal value function, so this is really just a fancy way of saying  that given you can compute the optimal policy from the optimal value function and given that you can compute the optimal value function with the Q-function, it’s therefore possible to define the optimal policy in terms of the Q-function. Not much else going on here.</p><p>So now think about this. If the optimal policy can be determined from the Q-Function, can you define the optimal value function from it? Of course you can! You just take the best (or Max) utility for a given state:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/optimal-value-by-q.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>Here, the way I wrote it, &quot;a’&quot; means the next action you’ll take. In other words, you’re already looking at a value for the action &quot;a&quot; that got you to the current state, so &quot;a’&quot; just is a way to make it clear that we’re now talking about the <em>next</em> action. It’s not really saying anything else more fancy here.The bottom line is that it&#039;s entirely possible to define the optimal value function in terms of the Q-function.</p><p>So we now have the optimal value function defined in terms of the Q function. So what does that give us? As it turns out A LOT!!</p><p>Because now all we need to do is take the original Q-Function above, <em>which was by definition defined in terms of the optimal value function</em>, and you can replace the original value function with the above function where we&#039;re defining the Value function in terms of the Q-function. </p><p>In other words, it’s mathematically possible to define the Q-Function in terms of itself using recursion! And here is what you get:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/recurive-q.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>“But wait!” I hear you cry. You haven’t accomplished anything! I mean I can still see that little transition function (δ) in the definition! So you’ve bought nothing so far! You’ve totally failed, Bruce!</p><p>But have I?</p><p>So as it turns out, now that we&#039;ve defined the Q-function in terms of itself, we can do a little trick that drops the transition function out.</p><p><strong>Estimating the Transition Function</strong></p><p>Specifically, what we&#039;re going to do, is we&#039;ll start with an estimate of the Q-function and then slowly improve it each iteration. It&#039;s possible to show (that I won&#039;t in this post) that this is guaranteed over time (after infinity iterations) to converge to the real values of the Q-function. </p><p>Wait, infinity iterations? Yeah, but you will end up with an approximate result long before infinity.</p><p>But here is the algorithm in question:</p><p><strong>Q-Learning Algorithm:</strong></p><ul><li><p>Select an action a and execute it (part of the time select at random, part of the time, select what currently is the best known action from the Q-function tables)</p></li><li><p>Receive immediate reward r</p></li><li><p>Observe the new state s&#039; (s&#039; become new s)</p></li><li><p>Update the table entry as follows:</p></li></ul>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/q-table-update.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p></p><p>This equation really just says that you have a table containing the Q-function and you update that table with each move by taking the reward for the last State s / Action a pair and add it to the max valued action (a&#039;) of the new state you wind up in (i.e. the utility of that state.) Notice how it&#039;s very similar to the recursively defined Q-function.</p><p>So in my next post I&#039;ll show you more concretely how this works, but let&#039;s build a quick intuition for what we&#039;re doing here and why it&#039;s so clever.</p><p>What you&#039;re basically doing is your starting with an &quot;estimate&quot; for the optimal Q-Function and slowly updating it with the real reward values received for using that estimated Q-function. As you updated it with the real rewards received, your estimate of the optimal Q-function can only improve because you&#039;re forcing it to converge on the real rewards received. This seems obvious, right?</p><p>But now imagine that your &#039;estimate of the optimal Q-function&#039; is really just telling the algorithm that all states and all actions are initially the same value? As it turns out, so long as you run our Very Simple Maze™ enough times, <strong><em>even a really bad estimate (as bad as is possible!) will still converge to the right values of the optimal Q-function over time. </em></strong></p><p>All of this is possible because we can define the Q-Function in terms of itself and thereby estimate it using the update function above.</p><p>Now here is the clincher: we now have a way to estimate the Q-function without knowing the transition or reward function. By simply running the maze enough times with a bad Q-function estimate, and updating it each time to be a bit better, we&#039;ll eventually converge on something very close to the optimal Q-function. In other words:</p><ul><li><p>Q-Function can be estimated from real world rewards plus our current estimated Q-Function </p></li><li><p>Q-Function can create Optimal Value function </p></li><li><p>Optimal Value Function can create Optimal Policy </p></li><li><p>So using Q-Function and real world rewards, we don’t need actual Reward or Transition function</p></li></ul><p>In other words, the above algorithm -- known as the Q-Learning Algorithm (which is the most famous type of Reinforcement Learning) -- can (in theory) learn an optimal policy for <em>any Markov Decision Process even if we don&#039;t know the transition function and reward function. </em></p><p><strong>And since (in theory) any problem can be defined as an MDP (or some variant of it) then in theory we have a general purpose learning algorithm! </strong></p><p>This is what makes Reinforcement Learning so exciting.</p><p><a href="https://drive.google.com/file/d/13oU-FajzeCxsl5b53mRI3DyFkby_LYk_/view?usp=sharing">Link to original presentation slide show.</a></p>
+
+        
+      
+    </article>
+  </div>
+</section>
+
+    </main>
+
+    <section class="container footer-cta text-center secondary reverse">
+      <div class="content mw-750">
+        <h3 class="mb-32">Simplify the way you build software</h3>
+                  
+                <p><a class="button white" href="../contact.html">Get Started</a></p>
+      </div>
+    </section>
+    <footer class="container site-footer reverse">
+      <div class="content">
+        <div class="gridlex mb-32">
+          <div class="col-3_lg-12"><img src="../assets/logos/solutionstream-logo-white-horz.svg"></div>
+          <div class="col-3_lg-4_md-6_xs-12">
+            <ul class="list-unstyled footer-list">
+              <li>
+                <div class="icon"><i class="icon-location_pin"></i></div>
+                <div class="data">
+                  <p> <strong>Our Office</strong></p>
+                  <p>249 N 1200 E</p>
+<p>Lehi, UT 84043</p>
+
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3_lg-4_md-6_xs-12">
+            <ul class="list-unstyled footer-list">
+              <li>
+                <div class="icon"><i class="icon-email"></i></div>
+                <div class="data"> 
+                  <p> <a href="email:&#x69;&#x6e;&#102;&#x6f;@&#115;&#111;&#108;u&#x74;&#x69;on&#x73;&#116;&#x72;&#x65;a&#109;&#x2e;&#x63;&#x6f;&#109;">&#x69;&#x6e;&#102;&#x6f;@&#115;&#111;&#108;u&#x74;&#x69;on&#x73;&#116;&#x72;&#x65;a&#109;&#x2e;&#x63;&#x6f;&#109;</a></p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="icon-phone_iphone"></i></div>
+                <div class="data"> 
+                  <p> <a href="tel:800-314-3451">800-314-3451</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3_lg-4_md-12">
+            <ul class="list-unstyled footer-list">
+              <li>
+                <div class="icon"><i class="icon-linkedin"></i></div>
+                <div class="data"> 
+                  <p> <a href="https://www.linkedin.com/company/solutionstream/">Linkedin</a></p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="icon-twitter"></i></div>
+                <div class="data"> 
+                  <p> <a href="https://twitter.com/solutionstream?lang=en">Twitter</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-legal">&copy; 2025 SolutionStream. All Rights Reserved | <a href="../privacy-policy.html">Privacy Policy</a></p>
+        <p class="footer-legal">This website has implemented reCAPTCHA v3 and your use of reCAPTCHA v3 is subject to the <a href="https://www.google.com/policies/privacy/" target="_blank">Google Privacy Policy</a> and <a href="https://www.google.com/policies/terms/" target="_blank">Terms of Use</a>.</p>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/arduino-light.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <script src="http://unpkg.com/alpinejs" defer=""></script>
+    <script src="../js/app.min.js"></script>
+
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0GKZD6V15"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R0GKZD6V15');
+    </script>
+
+
+    
+    <script>
+      (function (w, d, t) {
+          _ml = w._ml || {};
+          _ml.eid = '81430';
+          _ml.cid = '185126bf-d607-4918-97fb-cce147289f39';
+          var s, cd, tag; s = d.getElementsByTagName(t)[0]; cd = new Date();
+          tag = d.createElement(t); tag.async = 1;
+          tag.src = 'https://ml314.com/tag.aspx?' + cd.getDate() + cd.getMonth();
+          s.parentNode.insertBefore(tag, s);
+      })(window, document, 'script');
+  </script>
+    </body>
+
+<!-- Mirrored from solutionstream.com/blog/reinforcement-learning-how-to-drop-the-transition-function-rl-series-part-2 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Oct 2025 01:20:00 GMT -->
+</html>

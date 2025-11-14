@@ -1,0 +1,369 @@
+<!--
+   _____       _       _   _              _____ _                            
+  / ____|     | |     | | (_)            / ____| |                           
+ | (___   ___ | |_   _| |_ _  ___  _ __ | (___ | |_ _ __ ___  __ _ _ __ ___  
+  \___ \ / _ \| | | | | __| |/ _ \| '_ \ \___ \| __| '__/ _ \/ _` | '_ ` _ \ 
+  ____) | (_) | | |_| | |_| | (_) | | | |____) | |_| | |  __/ (_| | | | | | |
+ |_____/ \___/|_|\__,_|\__|_|\___/|_| |_|_____/ \__|_|  \___|\__,_|_| |_| |_|
+
+  Are you a developer? Come work for us!                                                                    
+-->
+
+<!doctype html>
+<html lang="en" dir="ltr" x-data="{ show: false }">
+  
+<!-- Mirrored from solutionstream.com/blog/what-makes-reinforcement-learning-so-exciting-rl-series-part-1 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Oct 2025 01:20:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="../assets/theme/app-icons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="../assets/theme/app-icons/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&amp;display=swap" rel="stylesheet">
+
+    <link href="../css/style.css" rel="stylesheet" media="screen">
+
+    <title>What Makes Reinforcement Learning So Exciting? (RL Series part 1) | SolutionStream</title>
+<meta name="description" content="@seo:What is Reinforcement Learning?&ldquo;&hellip;reinforcement learning seems to be a general learning algorithm that can be applied to a variety of environments; it may even be the first step...The graph above shows us the relationship between those terms.&nbsp;Artificial Intelligence&nbsp;is an umbrella term to cover any algorithm that attempts to find best (or close to best)...Supervised Learning is the most common &ndash; and best researched &ndash; form of Machine Learning. This technique involves showing an algorithm examples (or &quot;samples&quot;) of a set...By comparison, Unsupervised Learning has no specific outcomes it&rsquo;s trying to predict. For example, imagine you had the following data points and you wanted to see how they...Okay, this is such a simple maze it isn&rsquo;t even a maze! It&rsquo;s just 9 squares (our States!) that the robot might find itself in. No walls or anything else blocking it. The lower...Now intuitively this diagram makes obvious sense. It pretty obvious that if you are in state 7 and you move up, you&rsquo;ll now be in state 4. Etc. But computers are stupid, so how...What I&rsquo;m doing here is I&rsquo;m starting with the reward of 100 in the upper left corner (as our Reward function tells us!) and I&rsquo;m giving a value to every other square depending on...Can you see the value of our policy here? No matter what state you find yourself in, you just take the move that it says is optimal and you&#039;ll get to the goal (and the...But the underlying assumption of Dynamic Programming is that I know what the Transition and Reward functions are. Sure, in our simple of example, that&rsquo;s easy to work out. But..." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="What Makes Reinforcement Learning So Exciting? (RL Series part 1)" />
+<meta property="og:description" content="@seo:What is Reinforcement Learning?&ldquo;&hellip;reinforcement learning seems to be a general learning algorithm that can be applied to a variety of environments; it may even be the first step...The graph above shows us the relationship between those terms.&nbsp;Artificial Intelligence&nbsp;is an umbrella term to cover any algorithm that attempts to find best (or close to best)...Supervised Learning is the most common &ndash; and best researched &ndash; form of Machine Learning. This technique involves showing an algorithm examples (or &quot;samples&quot;) of a set...By comparison, Unsupervised Learning has no specific outcomes it&rsquo;s trying to predict. For example, imagine you had the following data points and you wanted to see how they...Okay, this is such a simple maze it isn&rsquo;t even a maze! It&rsquo;s just 9 squares (our States!) that the robot might find itself in. No walls or anything else blocking it. The lower...Now intuitively this diagram makes obvious sense. It pretty obvious that if you are in state 7 and you move up, you&rsquo;ll now be in state 4. Etc. But computers are stupid, so how...What I&rsquo;m doing here is I&rsquo;m starting with the reward of 100 in the upper left corner (as our Reward function tells us!) and I&rsquo;m giving a value to every other square depending on...Can you see the value of our policy here? No matter what state you find yourself in, you just take the move that it says is optimal and you&#039;ll get to the goal (and the...But the underlying assumption of Dynamic Programming is that I know what the Transition and Reward functions are. Sure, in our simple of example, that&rsquo;s easy to work out. But..." />
+<meta property="og:url" content="what-makes-reinforcement-learning-so-exciting-rl-series-part-1.html" />
+<meta property="og:site_name" content="SolutionStream" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@solutionstream" />
+<meta name="twitter:title" content="What Makes Reinforcement Learning So Exciting? (RL Series part 1)" />
+<meta name="twitter:description" content="@seo:What is Reinforcement Learning?&ldquo;&hellip;reinforcement learning seems to be a general learning algorithm that can be applied to a variety of environments; it may even be the first step...The graph above shows us the relationship between those terms.&nbsp;Artificial Intelligence&nbsp;is an umbrella term to cover any algorithm that attempts to find best (or close to best)...Supervised Learning is the most common &ndash; and best researched &ndash; form of Machine Learning. This technique involves showing an algorithm examples (or &quot;samples&quot;) of a set...By comparison, Unsupervised Learning has no specific outcomes it&rsquo;s trying to predict. For example, imagine you had the following data points and you wanted to see how they...Okay, this is such a simple maze it isn&rsquo;t even a maze! It&rsquo;s just 9 squares (our States!) that the robot might find itself in. No walls or anything else blocking it. The lower...Now intuitively this diagram makes obvious sense. It pretty obvious that if you are in state 7 and you move up, you&rsquo;ll now be in state 4. Etc. But computers are stupid, so how...What I&rsquo;m doing here is I&rsquo;m starting with the reward of 100 in the upper left corner (as our Reward function tells us!) and I&rsquo;m giving a value to every other square depending on...Can you see the value of our policy here? No matter what state you find yourself in, you just take the move that it says is optimal and you&#039;ll get to the goal (and the...But the underlying assumption of Dynamic Programming is that I know what the Transition and Reward functions are. Sure, in our simple of example, that&rsquo;s easy to work out. But..." />
+<meta property="og:image" content="../img/asset/YXNzZXRzL2Jsb2cvUkwvaHVtYW5hbmRyb2JvdGhhbmRzLmpwZw%3d%3d0e55.jpg?p=seo_pro_og&amp;s=8c6836142f838a1cecc1c7fce2c870a1" />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:alt" content="" />
+<meta name="twitter:image" content="../img/asset/YXNzZXRzL2Jsb2cvUkwvaHVtYW5hbmRyb2JvdGhhbmRzLmpwZw%3d%3dc652.jpg?p=seo_pro_twitter&amp;s=bc2b14ae5aa143f4037cb01a23278d0d" />
+<meta name="twitter:image:alt" content="" />
+<link href="../index.html" rel="home" />
+<link href="what-makes-reinforcement-learning-so-exciting-rl-series-part-1.html" rel="canonical" />
+<link type="text/plain" rel="author" href="../humans.txt" />
+
+  </head>
+  <body :class="{ 'show-nav': show }">
+    <div class="overlay" @click="show = false"></div>
+
+    <nav class="mobile-nav">
+      <div class="close-nav text-right" @click="show = false"><i class="icon-clear"></i></div>
+      <ul class="list-unstyled">
+      <li>
+    <a href="../services.html">Services</a>
+  </li>
+          <li>
+    <a href="../solutionmap.html">SolutionMap</a>
+  </li>
+          <li>
+    <a href="../work.html">Work</a>
+  </li>
+          <li>
+    <a href="../company.html">Company</a>
+  </li>
+          <li class="active">
+    <a href="../blog.html">Blog</a>
+  </li>
+            <li>
+    <a href="../contact.html" class="button">Schedule a Call</a>
+  </li>
+    
+</ul>
+
+
+    </nav>
+
+    <header class="site-masthead ">
+      <div class="site-logo">
+        <a href="../index.html" aria-label="SolutionStream">
+          <img class="dark" src="../assets/logos/solutionstream-logo-horz.svg">
+          <img class="light" src="../assets/logos/solutionstream-logo-white-horz.svg">
+        </a>
+      </div>
+      <nav class="site-nav">
+        <ul class="list-unstyled">
+      <li>
+    <a href="../services.html">Services</a>
+  </li>
+          <li>
+    <a href="../solutionmap.html">SolutionMap</a>
+  </li>
+          <li>
+    <a href="../work.html">Work</a>
+  </li>
+          <li>
+    <a href="../company.html">Company</a>
+  </li>
+          <li class="active">
+    <a href="../blog.html">Blog</a>
+  </li>
+            <li>
+    <a href="../contact.html" class="button">Schedule a Call</a>
+  </li>
+    
+</ul>
+
+
+      </nav>
+      <div class="mobile-nav-icon" @click="show = !show"><i class="icon-menu"></i></div>
+    </header>
+
+
+          <div class="page-header-wrapper blog">
+  <div class="parallax" data-parallax-image="/img/asset/YXNzZXRzL2Jsb2cvUkwvaHVtYW5hbmRyb2JvdGhhbmRzLmpwZw==?w=1200&h=500&s=1d444defca4002f49ab329c9f9df0c41"></div>
+  <div class="container page-header">
+    <div class="content">
+      <div class="inner">
+        <h1 class="hyphen">What Makes Reinforcement Learning So Exciting? (RL Series part 1)</h1>
+        <p class="pl-60 mb-0">Written by Bruce Nielson          <span class="ml-12 mr-12">|</span>
+          <span class="read-time">
+          <i class="icon-access_time"></i>
+          <span class="reading-time"></span> read
+        </span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+
+    <main>
+
+      <section class="container blog-article">
+  <div class="content mw-750">
+    <article> 
+      
+                  <h2>What is Reinforcement Learning?</h2><p><em>“…reinforcement learning seems to be a general learning algorithm that can be applied to a variety of environments; it may even be the first step to a general artificial intelligence.” –Antonio Gulli and Sujit Pal in Deep Learning with Keras</em></p><p>It seems like you hear about Reinforcement Learning, particularly Deep Reinforcement learning, everywhere these days. There is a lot of excitement around it, despite it not really being very effective just yet. [1]</p><p>So what’s going on and why are so people many interested in researching it?</p><p>One obvious answer is that Reinforcement Learning recently had a major victory with “Alpha Go”; the program that beat the world Go-Master, Lee Sedol. Growing up I always heard that someday soon computers would beat the world chess champion because that was simply a matter of getting more memory and processing power to allow a deeper search of possible moves. But we were also told that to beat a Go-Master would take &quot;real intelligence&quot; because there were far too many possible moves to do a computer search for the ‘best move.’</p><p>Well the first prediction turned out to be correct – it wasn’t long before Deep Blue beat Garry Kasparov (on May 11, 1997) in chess. But it wasn’t that much longer before computers went on to beat Sedol in Go (on Mar 15, 2016) as well. How was this possible? The answer is, Reinforcement Learning.</p><p>This series of posts will explain the theoretical basis for reinforcement learning and why it’s such an exciting field. In future posts I’ll give details on how to actually create a basic Q-Learner and demonstrate its ability to solve problems as diverse as solving a maze to buying and selling stocks -- all with the same basic algorithm.</p><p>My posts will be as follows:</p><ul><li><p>Part 1: Overview of Reinforcement Learning and where it fits under the Artificial Intelligence / Machine Learning umbrellas</p></li><li><p>Part 2: The theoretical basis for Reinforcement Learning. Specifically, how clever computer scientists and mathematicians learned to drop the transition function from their equations, allowing them to use reinforcement learning on (theoretically) any real life function.</p></li><li><p>Part 3: And overview of how Reinforcement Learning, specifically a basic Q-Learner, really works. I&#039;ll give examples of the same Q-Learner solving grid world problems as well as how to apply it to making stock market long / short decisions.</p></li></ul><p><strong>Artificial Intelligence vs Machine Learning</strong></p><p>First, let’s describe what we even mean when we banter about terms like <em>Artificial Intelligence</em>, <em>Machine Learning</em>, or <em>Reinforcement Learning</em>.</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/ai_chart.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>The graph above shows us the relationship between those terms. </p><p><strong><em>Artificial Intelligence</em></strong> is an umbrella term to cover any algorithm that attempts to find best (or close to best) rational (i.e. ideal) solutions to problems -- particularly ones that would be intractable if you tried to use regular algorithms to solve them. For example, picking the best possible move in chess is an intractable problem that computers can&#039;t solve because the search space for chess moves is larger than the number of atoms in the universe. &quot;Artificial Intelligence&quot; is about coming up with a really good move that will (hopefully) beat an opponent even if it is not technically the &quot;optimal&quot; move. </p><p><strong><em>Machine Learning</em></strong> is one family of algorithms under the umbrella of <em>Artificial Intelligence. </em>We call an algorithm &quot;Machine Learning&quot; if it learns from experience. A good example of the difference is Deep Blue -- that beat Kasparov at Chess -- and Alpha Go -- that beat Sedol in Go. </p><p>Deep Blue is an Artificial Intelligence algorithm that searched for a best move by cleverly figuring out how to search as many moves ahead as possible while ignoring moves that weren&#039;t worth considering any further. But think about how many possible moves there are in chess -- far more moves than atoms in the universe. So no computer nor algorithm could possibly search all the way to the end of the game. Instead, AI algorithms like this use a &#039;board evaluation&#039; function to evaluate how good of a position a player is in given a specific board setup. A very simple such &#039;board evaluation function&#039; would be to assign points for every piece. Even a beginner in chess knows that a pawn is worth 1 point, a queen worth points, etc. But adding up those points, you&#039;d have a very basic board evaluation function. </p><p>Now given a clever search algorithm mixed with a clever board evaluation algorithm, you&#039;d be able to play chess better than any human being without needing to search all the way to the end of the game. Just search, say, 5 or 6 moves ahead and then evaluate every possible board you can force the other player to. Pick the move that will get you to the best one. This is, in essence, how Deep Blue works. </p><p>However, Deep Blue&#039;s board evaluation function was created by hand. In essence, it was made up of human intelligence rather than machine intelligence. The &quot;AI&quot; part of Deep Blue was the search algorithm, not the board evaluation function. Because of this, Deep Blue never got better with additional play. I.e. it never &quot;learned&quot; anything. This is why Deep Blue is considered &quot;Artificial Intelligence&quot; but not &quot;Machine Learning.&quot; </p><p>By comparison, Alpha Go did learn the more it played by improving it&#039;s board evaluation function as it played. Thus Alpha Go was not only Artificial Intelligence, but also used “Machine Learning” because it improved it&#039;s play as it gained more experience. [2] Interestingly, Alpha Go eventually got so good at evaluating the board, due to it&#039;s machine learning algorithm, that it could play at a professional level <em>without searching more than a single move ahead. </em>Use the Alpha Go Machine Learning board evaluation function with it&#039;s Artificial Intelligence search algorithm and it&#039;s pretty much game over for all human opponents.</p><p><strong>Types of Machine Learning</strong> <br></p><p>Now just as artificial intelligence can be split into multiple sub-fields, likewise “Machine Learning” can be split into at least 3 kinds:</p><ul><li><p>Supervised Learning</p></li><li><p>Unsupervised Learning</p></li><li><p>Reinforcement Learning</p></li></ul>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/supervised-learning.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>Supervised Learning is the most common – and best researched – form of Machine Learning. This technique involves showing an algorithm examples (or &quot;samples&quot;) of a set of features. In my example above, I&#039;m showing the algorithm examples of square feet and # of bedrooms of a house for sale. I also show the algorithm a set of outcomes, in this case the sales price for that house. The algorithm learns to predict the outcomes (sales price) from the features (square feet and # of bedrooms). Give a Supervised Learning algorithm more samples (more data about square feet and # of rooms vs sales price) and the algorithm will get better at predicting. That is to say, it learns with experience. </p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/unsupervised-learning.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>By comparison, Unsupervised Learning has no specific outcomes it’s trying to predict. For example, imagine you had the following data points and you wanted to see how they clustered together. Unsupervised learning might cluster them into 3 clusters something like these graphs to the right.</p><p><strong>Characteristics of Reinforcement Learning</strong></p><p>So what makes Reinforcement Learning different from Supervised and Unsupervised forms of Machine Learning. The main characteristics of Reinforcement Learning that distinguish it from regular Machine Learning are:</p><ul><li><p>Exploration</p></li><li><p>Delayed Rewards</p></li><li><p>Continuous Learning</p></li></ul><p>So consider Supervised Learning where you have a training phase where you train a model (e.g. to predict sales prices of homes) and only <em>after</em> this training phase do you use the algorithm to make predictions. However, the algorithm never improves after that. By comparison, Reinforcement Learning continually improves as it gains experience. In other words, Reinforcement Learning can &quot;continuously learn&quot; whereas Supervised Learning is either learning a model or using the model, but not both.</p><p>Reinforcement Learning also relies heavily on Exploration with Delayed Rewards. This matches real life much better than Supervised Learning. Suppose, for example, you created a machine learning algorithm to tell you if <a target="_blank" href="https://itunes.apple.com/us/app/not-hotdog/id1212457521?mt=8">an image is a hot dog or not a hot dog</a>. Now the world does not comes with hot dog labels to learn from, so a human ‘expert’ in hot-dog-ness needs to first create a training set of examples of a hot dog for the algorithm to learn from.</p><p>By comparison, Reinforcement Learning learns from real life rewards that the environment naturally provides as feedback. For example, an algorithm that buys and sells stocks can learn whether or buy or hold based on the stock market providing it ‘feedback’ or &#039;rewards&#039; of how much money was actually gained or lost. This removes the need for the human expert to first label the world. </p><p><strong>The Markov Decision Process (MDP)</strong></p><p>So how does Reinforcement Learning really work? Reinforcement Learning is a set of techniques that can solve what is called a Markov Decision Process. I’m going to now explain the formal definition of the Markov Decision Process as it will help explain why Reinforcement Learning can solve it. [3]</p><p>A Markov Decision Process is formally defined by the following variables:</p><ul><li><p>S = States agent can be in</p></li><li><p>A = Actions agent can take</p></li><li><p>At time t, the agent senses current state: St</p></li><li><p>Agent takes action At</p></li><li><p>The environment gives reward Rt in response and moves agent to state St+1:</p><ul><li><p>δ(St, At) = St+1(State Transition Function) </p></li><li><p>r(St, At) = Rt (Reward Function)</p></li></ul></li></ul><p>Putting this into plain English isn’t as bad as it first appears. It’s basically saying that to use Reinforcement Learning, we must be able to take a real world problem and define the problem as a series of states (S) in which we can take certain actions (A) at a specific time (t) and that in return the environment will then change or adapt to our actions and return to us some sort of reward.</p><p>Don’t be thrown off by functions with fancy Greek symbols like δ(St, At) which is our State Transition function. We traditionally use the Greek letter &quot;delta&quot; (i.e. δ) to represent the changes that take place, i.e. the transitions that take place. </p><p>In actuality, this is pretty simple. If you’re in a State at time t (i.e. St) and you take action A at that time (i.e. At) of course you’d expect things to change. Maybe the thing that changes is nothing more than your location! So imagine a robot that is in the hallway. Its current state is that it’s located in the Hallway, so St = Hallway. The robot then moves north because it wants to go to the Lobby. &quot;Moving north&quot; is it’s action at that time, so At = &quot;Move North&quot;</p><p>The somewhat less intuitive part is the reward function, r(St, At). Let&#039;s say our goal was to get the robot to move to the lobby. So we might give it a &#039;reward function&#039; that says &quot;if in State = Lobby then give a reward of 100 points, otherwise give no reward.&quot; Now realistically, the robot can&#039;t just suddenly appear in the lobby to get its reward. Perhaps it has to first rotate itself, then move forward towards the lobby, then maybe rotate itself a bit more, etc. until it successfully gets to the lobby and receives it&#039;s desired reward of 100 points. </p><p>As we’ll see, the reinforcement algorithm will smartly figure out what states and actions get it <em>closer</em>to its desired goal. (This is the Delayed Rewards concept I mentioned above.) Even though it has to take a series of actions to get to its goal, it learns which actions at which states get it closer to the goal and which get it further from the goal. Then using this information (which we call “Utility”, see below) it plans out how to move itself to the goal. </p><p>This is all there is to the Markov Decision Process. So it&#039;s actually fairly simple, conceptually. The hard part was figuring out how to make it all mathematically formalized so that we can program a computer to solve it.</p><p><strong>The Markov Assumption</strong></p><p>There is one key assumption here that falls out from the above description but isn’t immediately obvious. Note that there is no history being tracked, just a current state. So the robot does not track where it used to be, it simply assumes that all the information it needs is contained in the current “State information.”</p><p>This might seem like a huge constraint at first, but really it’s not quite as bad as it first appears. For one thing, you can pretty much define ‘current state’ however you want. If you really want to ‘promote’ past state info to be part of the currently tracked state, you can.</p><p>Also, one can (correctly) argue that all of physics – and thus all of reality – is in fact a Markov Decision Process. The laws of physics don’t care about the past either. Given physics equations and a description of a particle’s current direction, velocity, and acceleration, and you can predict where the particle is going to be next. You don’t need a history of its past trajectory to calculate that.</p><p><strong>Simple Example of a Markov Decision Process</strong></p><p>Okay, let’s make this more concrete. Let’s make a Very Simple Maze™ for a robot to run through:</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/maze.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>Okay, this is such a simple maze it isn’t even a maze! It’s just 9 squares (our States!) that the robot might find itself in. No walls or anything else blocking it. The lower left square is where the robot will start and the upper right square is where it wants to move to – i.e. where it will receive the 100 points reward.</p><p>So we know we have only 9 states here, but how many actions do we have per state? For simplicity, let’s assume the robot can only move up, down, left, or right. So there are 4 actions per state. [4] This effectively makes our legal actions something like this.</p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/actions.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <div class="photo-container floated right">
+                          <img src="../assets/blog/RL/transition.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>Now intuitively this diagram makes obvious sense. It pretty obvious that if you are in state 7 and you move up, you’ll now be in state 4. Etc. But computers are stupid, so how might you formalize that into a Transition Function? Well how about this table to the right as an approach?</p><p>Basically I just made a table where I list every possible state enumerated against every possible action and I then list what the new state will be should you take that action in that state. Note how &quot;state 7 - action Up&quot; moves us to state 4 – exactly as is obvious. This is going to be our simple &quot;Transition Function&quot; for our Very Simple Maze™. </p><p>And how about the reward function? Even easier. Make a table that shows that every state has a reward of zero except state 3. Set that to a reward of 100. I won&#039;t even draw this one for you because it&#039;s so simple.</p><p>Now in real life, on a reward function, we’d probably want to assign a small negative reward to non-goal states, say -1 points. This forces the robot to get serious about finding the goal to save its reward. But for our simple example, we won’t even do that much and we&#039;ll just set all non-goal states to a reward of zero.</p><p>So now that we’ve defined the Markov Decision Process, and shown how to apply it to a really simple example. But how would we teach our robot to solve this maze?</p><p><strong>Dynamic Programming to the Rescue</strong></p><p>Let’s pretend we had a magic algorithm that could ‘solve’ this decision process and find the optimal answer every time. That would be really useful because then we could just first take any problem in existence, figure out how to map it into the Markov Decision Process (which, at least in theory, all real life problem can be mapped to MDPs), and then apply our magic algorithm and – voila! – we’ll have a solution to our problem!</p><p>So there was this super smart guy, named Richard Bellman, that did in fact come up with a magic algorithm (of sorts) that could solve any Markov Decision Process – at least in theory. That algorithm is called Dynamic Programming. [5]</p><p>Now its outside the scope of this blog post to describe Dynamic Programming, but imagine you took our Very Simple Maze™ and did something like this: </p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/dp.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>What I’m doing here is I’m starting with the reward of 100 in the upper left corner (as our Reward function tells us!) and I’m giving a value to every other square depending on how close it is to that reward. Or putting it in more economic terms, I’m <strong>discounting </strong>for the future. I’m saying if state 3 (the goal) is worth 100 points for being in that state, then states 2 and 6 should have a higher <strong>utility </strong>then, say, states 4 and 8. Why? Because states 2 and 6 are only one square away from the reward whereas states 4 and 8 are two squares away.</p><p>The essence of dynamic programming is that I use the transition function and reward function, query them, and then calculate a utility for each state based on how close I am to the reward.</p><p>I note here the very important distinction between <strong>Reward</strong> and <strong>Utility</strong>. The robot only receives a reward in our current MDP design for being in state 3 (i.e. the upper right hand corner). But every state can have a calculated utility based on how close it is to the reward. Note that this means, for example, that state 6 has a utility of 90 but a reward of 0.</p><p>After our magic Dynamic Programming algorithm calculates the utility for each state, then the next step is to calculate a <strong>Policy</strong> for each state. Imagine doing something like this: </p>
+
+        
+      
+                  <div class="photo-container">
+                          <img src="../assets/blog/RL/policy.png" alt="">
+            
+
+            
+          </div>
+
+        
+      
+                  <p>Can you see the value of our policy here? No matter what state you find yourself in, you just take the move that it says is optimal and you&#039;ll get to the goal (and the reward) as quickly as possible. Neat, huh? We call this an <strong>Optimal Policy</strong> because it&#039;s a policy that always gets you the highest reward possible for your state. </p><p>Can you see how to compute the Optimal Policy from the Value function that came before it? You basically just select the move available in that state that moves you to the highest possible Utility value. Use that logic for every single state and you’ll end up with a ‘best policy’ for each state.</p><p><strong>But Wait! What if I Don’t Know the Transition Function?</strong></p>
+
+        
+      
+                  <div class="photo-container floated right">
+                          <img src="../assets/blog/RL/thinker.png" alt="">
+            
+
+                          <p class="photo-credit">Photo Credit: Photo Credit: Designed by www.vecteezy.com</p>
+            
+          </div>
+
+        
+      
+                  <p>But the underlying assumption of Dynamic Programming is that I know what the Transition and Reward functions are. Sure, in our simple of example, that’s easy to work out. But how likely am I to know, say, the transition function of the stock market? Oops. I guess Dynamic Programming isn’t such a magic algorithm after all!</p><p>If only we could come up with a way to form an optimal policy without knowing the transition and reward function… if only…</p><p>That will be the subject of my next post.</p><p><a href="https://drive.google.com/file/d/13oU-FajzeCxsl5b53mRI3DyFkby_LYk_/view?usp=sharing">Link to original presentation slide show.</a></p><p><strong>Notes</strong></p><p>[1] Alex Irpan, a Google employee on their Brain Robotics team, recently went as far as saying “Whenever someone asks me if reinforcement learning can solve their problem, I tell them it can’t. I think that is right at least 70% of the time.” <a target="_blank" href="https://www.alexirpan.com/2018/02/14/rl-hard.html">He goes on to blog about why he feels that is currently the case</a> despite also claiming that reinforcement learning is the future.</p><p>[2] Just to be clear here, in fact both Deep Blue <strong>and</strong> Alpha Go used searching techniques to find the best move, of course. But Deep Blue was primarily a searching technique in that its board evaluation function was handwritten and thus was really just a regular human built algorithm. Alpha Go used Reinforcement Learning to evaluate the board and thus mixed Artificial Intelligence (searching) <strong>and </strong>Machine Learning (Reinforcement Learning) together. Searching alone was insufficient with Go because Go has far too many possible moves and no easy way to evaluate if you&#039;re ahead or behind just by looking at the board. It&#039;s not like chess where the number of pieces you have remaining gives a pretty good picture of who is ahead or behind. Human experts get very good at intuiting how good their position is and it required Machine Learning to let a computer duplicate that intuition.</p><p>[3] This discussion is largely taken from Tom Mitchel&#039;s book, <em>Machine Learning</em>. </p><p>[4] So all my examples actually show no action for a move into a wall. But assume that&#039;s legal, but useless because you just end up back at the state you&#039;re already in.</p><p>[5] Dynamic Programming was so named before “programming” was the term used to label what we did on a computer. So it actually has nothing to do with computer programming and is actually a mathematical technique.</p>
+
+        
+      
+    </article>
+  </div>
+</section>
+
+    </main>
+
+    <section class="container footer-cta text-center secondary reverse">
+      <div class="content mw-750">
+        <h3 class="mb-32">Simplify the way you build software</h3>
+                  
+                <p><a class="button white" href="../contact.html">Get Started</a></p>
+      </div>
+    </section>
+    <footer class="container site-footer reverse">
+      <div class="content">
+        <div class="gridlex mb-32">
+          <div class="col-3_lg-12"><img src="../assets/logos/solutionstream-logo-white-horz.svg"></div>
+          <div class="col-3_lg-4_md-6_xs-12">
+            <ul class="list-unstyled footer-list">
+              <li>
+                <div class="icon"><i class="icon-location_pin"></i></div>
+                <div class="data">
+                  <p> <strong>Our Office</strong></p>
+                  <p>249 N 1200 E</p>
+<p>Lehi, UT 84043</p>
+
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3_lg-4_md-6_xs-12">
+            <ul class="list-unstyled footer-list">
+              <li>
+                <div class="icon"><i class="icon-email"></i></div>
+                <div class="data"> 
+                  <p> <a href="email:i&#110;f&#111;@s&#111;&#x6c;&#117;ti&#x6f;&#110;s&#x74;&#114;&#101;&#97;m.com">i&#110;f&#111;@s&#111;&#x6c;&#117;ti&#x6f;&#110;s&#x74;&#114;&#101;&#97;m.com</a></p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="icon-phone_iphone"></i></div>
+                <div class="data"> 
+                  <p> <a href="tel:800-314-3451">800-314-3451</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-3_lg-4_md-12">
+            <ul class="list-unstyled footer-list">
+              <li>
+                <div class="icon"><i class="icon-linkedin"></i></div>
+                <div class="data"> 
+                  <p> <a href="https://www.linkedin.com/company/solutionstream/">Linkedin</a></p>
+                </div>
+              </li>
+              <li>
+                <div class="icon"><i class="icon-twitter"></i></div>
+                <div class="data"> 
+                  <p> <a href="https://twitter.com/solutionstream?lang=en">Twitter</a></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-legal">&copy; 2025 SolutionStream. All Rights Reserved | <a href="../privacy-policy.html">Privacy Policy</a></p>
+        <p class="footer-legal">This website has implemented reCAPTCHA v3 and your use of reCAPTCHA v3 is subject to the <a href="https://www.google.com/policies/privacy/" target="_blank">Google Privacy Policy</a> and <a href="https://www.google.com/policies/terms/" target="_blank">Terms of Use</a>.</p>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/arduino-light.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    <script src="http://unpkg.com/alpinejs" defer=""></script>
+    <script src="../js/app.min.js"></script>
+
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0GKZD6V15"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R0GKZD6V15');
+    </script>
+
+
+    
+    <script>
+      (function (w, d, t) {
+          _ml = w._ml || {};
+          _ml.eid = '81430';
+          _ml.cid = '185126bf-d607-4918-97fb-cce147289f39';
+          var s, cd, tag; s = d.getElementsByTagName(t)[0]; cd = new Date();
+          tag = d.createElement(t); tag.async = 1;
+          tag.src = 'https://ml314.com/tag.aspx?' + cd.getDate() + cd.getMonth();
+          s.parentNode.insertBefore(tag, s);
+      })(window, document, 'script');
+  </script>
+    </body>
+
+<!-- Mirrored from solutionstream.com/blog/what-makes-reinforcement-learning-so-exciting-rl-series-part-1 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Oct 2025 01:20:11 GMT -->
+</html>
