@@ -1,0 +1,16 @@
+{
+  "name": "solutionstream-website-tests",
+  "version": "1.0.0",
+  "description": "Test suite for SolutionStream website",
+  "scripts": {
+    "test": "node test_site.js",
+    "test:quick": "node test_site_quick.js",
+    "start": "cd solutionstream.com && python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  },
+  "devDependencies": {},
+  "author": "SolutionStream",
+  "license": "MIT"
+}
