@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "solutionstream.com/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/solutionstream.com/$1"
+    }
+  ]
+}
