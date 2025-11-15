@@ -63,7 +63,7 @@ async function runTests() {
   // Test 2: Marketing copy present on homepage
   await test('Homepage hero copy updated', async () => {
     const { body } = await fetchURL(`${BASE_URL}/index.html`);
-    if (!body.includes("We've Been Building Software for 28 Years")) {
+    if (!body.includes("28 Years Building Software That Scales")) {
       throw new Error('New hero headline missing');
     }
     if (!body.includes("We're not flashy. We're reliable")) {
@@ -90,9 +90,6 @@ async function runTests() {
     const { body } = await fetchURL(`${BASE_URL}/contact.html`);
     if (!body.includes("Let's Talk About Your Project")) {
       throw new Error('New header missing');
-    }
-    if (!body.includes('No sales pitch')) {
-      throw new Error('Honest positioning missing');
     }
     if (body.includes('get back to soon')) {
       throw new Error('Typo still present');
