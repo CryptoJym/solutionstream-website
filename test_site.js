@@ -102,8 +102,8 @@ async function testMarketingCopy() {
     {
       page: 'index.html',
       contains: [
-        "We've Been Building Software for 28 Years",
-        "Young Living scaled from $200M to $2B",
+        "28 Years Building Software That Scales",
+        "Full-time teams that ship reliable, scalable software, backed by $2B revenue growth and 10X user scaling for our clients.",
         "We're not flashy. We're reliable",
         "$2B",
         "client revenue growth (Young Living)",
