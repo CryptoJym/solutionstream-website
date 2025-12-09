@@ -1,0 +1,52 @@
+[
+  {
+    "id": "engineers-upgraded-how-solutionstream-turns-great-devs-into-ai-intelligent-engineers",
+    "title": "Engineers, Upgraded: How SolutionStream Turns Great Devs into AI-Intelligent Engineers",
+    "date": "October 20, 2025",
+    "author": "SolutionStream Team",
+    "image": "assets/blog/dot-blue-wave-light-screen-gradient-texture-background_1045959-21388.avif",
+    "readTime": "5 min",
+    "excerpt": "Discover how we are transforming our engineering workforce with AI tools and methodologies.",
+    "content": "<p>At SolutionStream, we believe that the future of engineering isn't about replacing developers with AI—it's about empowering great developers with AI intelligence.</p><h2>The Shift</h2><p>Traditional development cycles are often bogged down by repetitive tasks. By integrating AI into our workflow, we've seen a massive shift in productivity and job satisfaction.</p><ul><li><strong>Automated Testing:</strong> AI writes the boilerplate, humans verify the logic.</li><li><strong>Code Architecture:</strong> AI suggests patterns, humans choose the scalable path.</li></ul><p>This isn't just about speed; it's about quality. An AI-assisted engineer makes fewer syntax errors and spends more time on complex problem-solving.</p>"
+  },
+  {
+    "id": "why-companies-choose-outside-vendors-for-hiring-technical-experts",
+    "title": "Why Companies Choose Outside Vendors for Hiring Technical Experts",
+    "date": "September 15, 2025",
+    "author": "Carson McCracken",
+    "image": "img/asset/YXNzZXRzL2Jsb2cvY2xlbS1vbm9qZWdodW8tZnk4anI0aXVwcW0tdW5zcGxhc2guanBn0af2.jpg?w=700&h=400&s=87a583bd0003e53c16a9877192b8e4c8",
+    "readTime": "4 min",
+    "excerpt": "Hiring is hard. Finding technical experts is harder. Here is why vendors are the strategic choice.",
+    "content": "<p>In today's competitive landscape, speed to market is everything. Building an internal team from scratch can take months. Partnering with a vendor like SolutionStream can take days.</p><h2>The Talent Gap</h2><p>The demand for senior engineers far outstrips supply. Vendors maintain a bench of pre-vetted talent ready to deploy.</p><p>When you hire a vendor, you aren't just hiring a person; you are hiring a system of support, ongoing training, and backup that an individual contractor cannot provide.</p>"
+  },
+  {
+    "id": "how-ai-affects-custom-software-development",
+    "title": "How AI Affects Custom Software Development",
+    "date": "August 28, 2025",
+    "author": "Carson McCracken",
+    "image": "img/asset/YXNzZXRzL2Jsb2cvYWktYWZmZWN0cy1zb2Z0d2FyZS1kZXYuanBlZw%3d%3db8b4.jpg?w=700&h=400&s=17e810e693f970e1ad5b9262b086d67c",
+    "readTime": "6 min",
+    "excerpt": "Custom software is evolving. AI is the catalyst. Explore the impact on efficiency and UX.",
+    "content": "<p>Custom software development is essential to business growth and innovation. To stay competitive and meet the unique needs of their customers, companies are increasingly turning to custom software solutions. Furthermore, the integration of Artificial Intelligence (AI) into custom software development has brought with it new possibilities and capabilities.</p><h2>The Evolution of Custom Software Development</h2><p>Custom software development has come a long way since its inception. Initially, it involved creating software tailored to a specific business's requirements, which often proved to be time-consuming and expensive. As technology has advanced, so too has the custom software development process. Today, businesses can benefit from custom software that harnesses the power of AI.</p><h2>AI-Powered Custom Software Development</h2><ol><li><p><strong>Efficiency and Speed</strong>: One of the primary advantages of incorporating AI into custom software development is the significant improvement in efficiency and speed. AI algorithms can automate repetitive tasks, such as code generation, debugging, and testing, leading to faster development cycles.</p></li><li><p><strong>Enhanced User Experience</strong>: AI can analyze user data and behavior to create highly personalized user experiences. Custom software developed with AI can adapt to individual preferences, making the interaction between users and the software more intuitive and engaging.</p></li><li><p><strong>Data-Driven Decision Making</strong>: AI-powered custom software can gather, process, and analyze vast amounts of data in real-time. This enables businesses to make data-driven decisions swiftly, giving them a competitive edge in today's data-driven world.</p></li></ol>"
+  },
+  {
+    "id": "the-pros-and-cons-of-hiring-contractors-vs-full-time-employees",
+    "title": "The Pros and Cons of Hiring Contractors vs Full Time Employees",
+    "date": "July 10, 2025",
+    "author": "SolutionStream Team",
+    "image": "img/asset/YXNzZXRzL2Jsb2cvdW51c2VkL3NvbHV0aW9uc3RyZWFtLmpwZWc%3d6137.jpg?w=700&h=400&s=727d9ebf47495d48a313d4ae228f0eea",
+    "readTime": "5 min",
+    "excerpt": "Deciding between contractors and FTEs? We break down the costs, risks, and benefits.",
+    "content": "<p>It is the classic dilemma for CTOs: flexible contractors or loyal employees? The answer isn't binary.</p><h2>Flexibility vs. Knowledge Retention</h2><p>Contractors offer immediate skill injection but often walk away with the domain knowledge. FTEs build institutional memory but carry high overhead.</p><p>SolutionStream bridges this gap by offering 'Full-Time Consultants'—engineers who work for us long-term but embed with you. You get the stability of an employee with the flexibility of a vendor contract.</p>"
+  },
+  {
+    "id": "artificial-intelligence-and-machine-learning",
+    "title": "Artificial Intelligence and Machine Learning: How You Can Leverage It",
+    "date": "June 05, 2025",
+    "author": "Carson McCracken",
+    "image": "img/asset/YXNzZXRzL2Jsb2cvZHNjXzA4OTctMi5qcGc%3df3ff.jpg?w=700&h=400&s=af2e7f32d3469440bf675bd626d4391a",
+    "readTime": "7 min",
+    "excerpt": "AI is more than a buzzword. Here are practical ways to apply ML to your business today.",
+    "content": "<p>Machine Learning isn't magic; it's math. And for businesses, it's a tool for prediction and optimization.</p><h2>Practical Applications</h2><ul><li><strong>Customer Churn Prediction:</strong> Analyze usage patterns to flag at-risk accounts.</li><li><strong>Inventory Optimization:</strong> Predict demand spikes based on historical data.</li><li><strong>Automated Support:</strong> Use NLP to handle Tier 1 support tickets instantly.</li></ul><p>We help clients move past the hype phase and identify the one or two high-value use cases where AI can actually move the needle on revenue.</p>"
+  }
+]
