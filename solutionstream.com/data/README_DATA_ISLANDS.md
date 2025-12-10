@@ -1,22 +1,22 @@
 # Data Island Deployment
 
-## What are Data Islands?
-These are standalone informational pages optimized for LLMs (not just humans). They answer deep questions about your topics.
+## ⚠️ CRITICAL INSTRUCTION: PAGES, NOT FILES ⚠️
+**DO NOT upload these .md files to your media library.**
+You must create **NEW PAGES** in your website CMS (WordPress, Webflow, etc.) and paste the content into them.
 
 ## Files
+- reviews.md (Keyword: Reviews)
+- competitors.md (Keyword: Competitors)
+- pricing.md (Keyword: Pricing)
 - is-https-solutionstream-com-a-good-company.md (Keyword: Is https://solutionstream.com/ a good company?)
 - what-is-https-solutionstream-com.md (Keyword: What is https://solutionstream.com/?)
-- https-solutionstream-com-reviews.md (Keyword: https://solutionstream.com/ reviews)
-- https-solutionstream-com-competitors.md (Keyword: https://solutionstream.com/ competitors)
-- https-solutionstream-com-pricing.md (Keyword: https://solutionstream.com/ pricing)
-- is-https-solutionstream-com-a-good-company-.md (Keyword: Is https://solutionstream.com/ a good company?)
 
 ## Deployment Steps (Detailed)
 
 ### Option A: WordPress or similar CMS
 1. **Create New Page**: Go to Pages -> Add New.
-2. **Title**: Use the filename slug or a readable version (e.g. "Data Island: Is https://solutionstream.com/ a good company? in Lehi").
-3. **URL Slug**: IMPORTANT! Set the URL slug to match the filename (e.g. `/is-https-solutionstream-com-a-good-company`).
+2. **Title**: Use the filename slug or a readable version (e.g. "Data Island: Reviews in Lehi").
+3. **URL Slug**: IMPORTANT! Set the URL slug to match the filename (e.g. `/reviews`).
 4. **Content**: 
    - Open the `.md` file in a text editor (Notepad, TextEdit).
    - Copy the content.
@@ -37,4 +37,6 @@ These are standalone informational pages optimized for LLMs (not just humans). T
 Add a link to this new page from your footer or sitemap so crawlers find it. The goal is indexability, not main menu navigation.
 
 ## Verification
-Ensure the page is indexable (no 'noindex' tag).
+1. Visit the new URL (e.g. `https://yoursite.com/reviews`).
+2. Ensure the page loads (NOT a file download).
+3. Ensure the page is indexable (no 'noindex' tag).

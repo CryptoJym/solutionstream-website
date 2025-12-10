@@ -11,8 +11,8 @@
 - [https://solutionstream.com/services](https://solutionstream.com/services)
 - [https://www.solutionstream.com/](https://www.solutionstream.com/)
 - [https://solutionstream.com/company](https://solutionstream.com/company)
+- [https://solutionstream.com/sitemap.xml](https://solutionstream.com/sitemap.xml)
 - [https://solutionstream.com/solutionmap](https://solutionstream.com/solutionmap)
-- [https://solutionstream.com/privacy-policy](https://solutionstream.com/privacy-policy)
 - [https://solutionstream.com/brand/downloads](https://solutionstream.com/brand/downloads)
 - [https://solutionstream.com/contact](https://solutionstream.com/contact)
 - [https://solutionstream.com/blog](https://solutionstream.com/blog)
@@ -24,9 +24,8 @@ https://solutionstream.com/ reviews, https://solutionstream.com/ competitors, ht
 
 ## Data Islands (Truth Kernels)
 
+- [Reviews in Lehi](/data/reviews.md)
+- [Competitors in Lehi](/data/competitors.md)
+- [Pricing in Lehi](/data/pricing.md)
 - [Is https://solutionstream.com/ a good company? in Lehi](/data/is-https-solutionstream-com-a-good-company.md)
 - [What is https://solutionstream.com/? in Lehi](/data/what-is-https-solutionstream-com.md)
-- [https://solutionstream.com/ reviews in Lehi](https://solutionstream.com/data/https-solutionstream-com-reviews.md)
-- [https://solutionstream.com/ competitors in Lehi](https://solutionstream.com/data/https-solutionstream-com-competitors.md)
-- [https://solutionstream.com/ pricing in Lehi](https://solutionstream.com/data/https-solutionstream-com-pricing.md)
-- [Is https://solutionstream.com/ a good company? in Lehi](https://solutionstream.com/data/is-https-solutionstream-com-a-good-company-.md)
