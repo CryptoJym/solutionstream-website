@@ -11597,7 +11597,8 @@ HOMEPAGE
 
 @media only screen and (min-width: 769px) {
   .about-services {
-    grid-template-columns: repeat(3, 1fr);
+    /* FIX: Use auto-fit for responsive layout instead of fixed 3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
   }
 }
 
