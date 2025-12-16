@@ -1,0 +1,18 @@
+{
+  "@id": "https://solutionstream.com/#organization",
+  "url": "https://solutionstream.com/",
+  "logo": {
+    "@id": "https://solutionstream.com/#logo"
+  },
+  "name": "Solution Stream",
+  "@type": "Organization",
+  "image": {
+    "@id": "https://solutionstream.com/#logo",
+    "url": "https://solutionstream.com/logo.png",
+    "@type": "ImageObject",
+    "contentUrl": "https://solutionstream.com/logo.png"
+  },
+  "@context": "https://schema.org",
+  "description": "This company offers software development, staffing an d something else",
+  "foundingDate": "1996"
+}

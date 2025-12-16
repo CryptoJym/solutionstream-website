@@ -1,0 +1,9 @@
+{
+  "@id": "https://solutionstream.com/#organization",
+  "url": "https://solutionstream.com/",
+  "name": "Solution Stream",
+  "@type": "Organization",
+  "@context": "https://schema.org",
+  "description": "Solution Stream is a custom software development and IT staffing company specializing in delivering tailored digital solutions and top technology talent to drive business growth and innovation.",
+  "foundingDate": "1996"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Solution Stream",
+  "description": "Solution Stream is a custom software development and IT staffing company specializing in delivering tailored digital solutions and top technology talent to drive business growth and innovation.",
+  "capabilities": [
+    {
+      "name": "get_entity_info",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "enum": [
+              "name",
+              "description",
+              "website",
+              "foundedYear",
+              "founders"
+            ],
+            "type": "string",
+            "description": "Field to retrieve"
+          }
+        }
+      },
+      "description": "Get information about the entity"
+    },
+    {
+      "name": "search_content",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          }
+        }
+      },
+      "description": "Search entity content and pages"
+    }
+  ],
+  "endpoints": {
+    "api": "https://solutionstream.com/api/llmo/agent/user-user_36GxVmLAeazZ6SU9k2nzMVPDA1h",
+    "mcp": "https://solutionstream.com/.well-known/mcp/user-user_36GxVmLAeazZ6SU9k2nzMVPDA1h"
+  },
+  "authentication": {
+    "apiKey": {
+      "header": "X-API-Key"
+    },
+    "schemes": [
+      "api_key",
+      "oauth2"
+    ]
+  },
+  "version": 17
+}
