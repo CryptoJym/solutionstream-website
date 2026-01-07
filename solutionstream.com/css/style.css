@@ -10916,7 +10916,7 @@ select {
   border: 1px solid var(--gray-20);
   font-size: 16px;
   font-size: 1rem;
-  color: var(--gray);
+  color: var(--gray-90);
   border-radius: 10px;
   background: var(--white);
   font-weight: var(--light);
