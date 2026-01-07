@@ -56,17 +56,9 @@ if (window.recaptchaV3) {
               }
             })
             .catch(function(error) {
-              let errorMessage
-
-              // Remove forms from the DOM and replace with an error message.
-              for (let i = 0; i < forms.length; ++i) {
-                errorMessage = document.createElement('div')
-                errorMessage.className = 'alert alert-danger p-2 rounded bg-red-500'
-                errorMessage.setAttribute('role', 'alert')
-                errorMessage.innerHTML = error.response.data.error || 'Sorry, but you look like a robot.'
-
-                forms[i].parentNode.replaceChild(errorMessage, forms[i])
-              }
+              // Fail open on static hosts: keep forms visible if verification isn't available.
+              // This prevents the form from disappearing when the backend endpoint is missing.
+              console.warn('reCAPTCHA v3 verification failed; allowing form to proceed.', error)
             })
         })
     })
