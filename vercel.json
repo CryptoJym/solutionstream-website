@@ -1,16 +1,12 @@
 {
+  "framework": null,
   "version": 2,
   "public": true,
-  "builds": [
-    {
-      "src": "solutionstream.com/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/solutionstream.com/$1"
-    }
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/:path((?!.*\\.).*)", "destination": "/:path.html" }
   ]
 }
